@@ -31,6 +31,8 @@ def main():
 
     from settings import Settings
 
+    settings = Settings()
+
     parser = argparse.ArgumentParser(
       description="PassiveGoalCreatorを利用して目標を生成します。"
     )
