@@ -68,5 +68,5 @@ def main():
 
     print(f"{optimized_response}")
 
-def __name__ == "__main__":
+if __name__ == "__main__":
     main()
