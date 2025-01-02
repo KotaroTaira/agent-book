@@ -168,7 +168,7 @@ class SinglePathPlanGeneration:
 def main():
     import argparse
 
-    from settings improt Settings
+    from settings import Settings
 
     settings = Settings()
 
