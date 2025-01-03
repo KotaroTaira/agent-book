@@ -10,10 +10,10 @@ from langchain_core.runnables import ConfigurableField
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from langgraph.prebuilt import create_react_agent
-# from passive_goal_creator import Goal, PassiveGoalCreator
-# from prompt_optimizer import OptimizedGoal, PromptOptimizer
+from passive_goal_creator import Goal, PassiveGoalCreator
+from prompt_optimizer import OptimizedGoal, PromptOptimizer
 from pydantic import BaseModel, Field
-# from response_optimizer import ResponseOptimizer
+from response_optimizer import ResponseOptimizer
 
 class TaskOption(BaseModel):
     description: str = Field(..., description="タスクオプションの説明")
@@ -250,7 +250,7 @@ class MultiPathPlanGeneration:
 def main():
     import argparse
 
-    #from settings import Settings
+    from settings import Settings
 
     settings = Settings()
 
