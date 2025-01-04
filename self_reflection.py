@@ -152,14 +152,16 @@ class ResultAggregator:
             "過去のふりかえりを考慮すること:\n{reflections_text}\n"
         )
         chain = prompt | self.llm | StrOutputParser()
-        return {
-            "query": query,
-            "results": "\n\n".join(
-                f"Info {i+1}:\n{result}" for i, result in enumerate(results)
-            ),
-            "response_definition": response_definition,
-            "reflections_text": format_reflections(relevant_reflections),
-        }
+        return chain.invoke(
+            {
+                "query": query,
+                "results": "\n\n".join(
+                    f"Info {i+1}:\n{result}" for i, result in enumerate(results)
+                ),
+                "response_definition": response_definition,
+                "reflections_text": format_reflections(relevant_reflections),
+            }
+        )
 
 class ReflectiveAgent:
     def __init__(
