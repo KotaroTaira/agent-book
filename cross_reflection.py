@@ -17,7 +17,7 @@ def main():
     args = parser.parse_args()
 
     openai_llm = ChatOpenAI(model=settings.openai_smart_model, temperature=settings.temperature)
-    anthropic_llm = ChatAnthropic(model=settings.anthropic_model, temperature=settings.temperature)
+    anthropic_llm = ChatAnthropic(model=settings.anthropic_smart_model, temperature=settings.temperature)
 
     reflection_manager = ReflectionManager(file_path=settings.default_reflection_db_path)
     task_reflector = TaskReflector(llm=anthropic_llm, reflection_manager=reflection_manager)
